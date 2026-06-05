@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Alert, Col, Container, Row, Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { useCreateProductMutation } from "../services/appApi";
+import { useCreateProductMutation } from "../services/api";
 import axios from "../axios";
 import "./CreateProduct.css";
 

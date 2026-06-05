@@ -1,6 +1,6 @@
 import axios from "../axios";
 import React, { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Loading from "../components/Loading";
 import { Col, Container, Row } from "react-bootstrap";
 import ProductPreview from "../components/ProductPreview";
@@ -28,7 +28,7 @@ function CategoryPage() {
   }, [category]);
 
   if (loading) {
-    <Loading />;
+    return <Loading />;
   }
 
   const productSearch = products.filter((product) =>

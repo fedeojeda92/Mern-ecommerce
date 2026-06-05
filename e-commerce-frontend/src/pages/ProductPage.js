@@ -18,7 +18,7 @@ import Loading from "../components/Loading";
 import SimilarProduct from "../components/SimilarProduct";
 import "./ProductPage.css";
 import { LinkContainer } from "react-router-bootstrap";
-import { useAddToCartMutation } from "../services/appApi";
+import { useAddToCartMutation } from "../services/api";
 import ToastMessage from "../components/ToastMessage";
 
 function ProductPage() {

@@ -3,7 +3,7 @@ import { Button, Table } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "./DashboardProducts.css";
-import { useDeleteProductMutation } from "../services/appApi";
+import { useDeleteProductMutation } from "../services/api";
 
 function DashboardProducts() {
   const products = useSelector((state) => state.products);

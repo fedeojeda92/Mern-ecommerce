@@ -4,11 +4,11 @@ const app = express();
 const http = require("http");
 require("dotenv").config();
 const stripe = require("stripe")(process.env.STRIPE_SECRET);
-require("./connection");
+require("./config/connection");
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server, {
-  cors: "http://locahost:3001",
+  cors: "http://localhost:3001",
   methods: ["GET", "POST", "PATCH", "DELETE"],
 });
 
@@ -40,8 +40,8 @@ app.post("/create-payment", async (req, res) => {
   }
 });
 
-server.listen(8080, () => {
-  console.log("server running at port", 8080);
+server.listen(process.env.PORT || 8080, () => {
+  console.log("server running at port", process.env.PORT || 8080);
 });
 
 app.set("socketio", io);

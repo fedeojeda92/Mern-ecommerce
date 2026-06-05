@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import productSlice from "./features/productSlice";
-import userSlice from "./features/userSlice";
-import appApi from "./services/appApi";
+import productSlice from "../features/productSlice";
+import userSlice from "../features/userSlice";
+import appApi from "../services/api";
 
 //tener las credenciales cargadas para no tener que volver a ingresarlas todo el tiempo
 

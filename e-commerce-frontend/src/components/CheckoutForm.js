@@ -2,7 +2,7 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { useCreateOrderMutation } from "../services/appApi";
+import { useCreateOrderMutation } from "../services/api";
 import { Alert, Button, Col, Form, Row } from "react-bootstrap";
 import "./CheckoutForm.css";
 

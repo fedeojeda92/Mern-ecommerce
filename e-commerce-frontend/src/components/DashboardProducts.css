@@ -1,5 +1,15 @@
 .dashboard-product-preview {
-  width: 100px;
-  height: 100px;
+  width: 96px;
+  height: 96px;
   object-fit: cover;
+  border-radius: 16px;
+}
+
+.table td,
+.table th {
+  vertical-align: middle;
+}
+
+.btn + .btn {
+  margin-left: 0.65rem;
 }

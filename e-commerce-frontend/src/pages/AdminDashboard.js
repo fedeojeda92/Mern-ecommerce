@@ -7,7 +7,7 @@ import ClientsAdminPage from "../components/ClientsAdminPage";
 
 function AdminDashboard() {
   return (
-    <Container>
+    <Container className="admin-dashboard">
       <Tab.Container defaultActiveKey="products">
         <Row>
           <Col sm={3}>

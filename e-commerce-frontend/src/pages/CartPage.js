@@ -8,7 +8,7 @@ import {
   useDecreaseCartProductMutation,
   useIncreaseCartProductMutation,
   useRemoveFromCartMutation,
-} from "../services/appApi";
+} from "../services/api";
 import CheckoutForm from "../components/CheckoutForm";
 
 const stripePromise = loadStripe(

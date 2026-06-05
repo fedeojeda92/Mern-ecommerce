@@ -18,10 +18,42 @@ function Home() {
   }, []);
   return (
     <div>
-      <img
-        src="https://res.cloudinary.com/dvmarheuq/image/upload/v1682618552/qx1jpmq7fsyaps2s8d8i.png"
-        className="home-banner"
-      />
+      <section className="hero-section container mt-4">
+        <div className="hero-copy">
+          <span className="hero-badge">Premium rides for every road</span>
+          <h1>Find your next bike with style, speed, and confidence.</h1>
+          <p>
+            Explore our curated selection of city, mountain, and leisure bikes with
+            smart checkout and fast delivery. Ready to ride? Your new bike is one
+            click away.
+          </p>
+          <div className="hero-actions">
+            <Link to="/category/all" className="btn btn-primary hero-btn">
+              Browse all bikes
+            </Link>
+            <Link to="/orders" className="hero-link">
+              Track your orders
+            </Link>
+          </div>
+        </div>
+        <div className="hero-media">
+          <div className="hero-card">
+            <img
+              src="https://res.cloudinary.com/dvmarheuq/image/upload/v1682618552/qx1jpmq7fsyaps2s8d8i.png"
+              alt="Bike on the road"
+              className="home-banner"
+            />
+            <div className="hero-card-meta">
+              <div>
+                <strong>Weekend Sale</strong>
+                <p>Up to 15% off on premium bikes.</p>
+              </div>
+              <span>Shop now</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <div className="featured-products-container container mt-4">
         <h2>Last Products</h2>
         <div className="d-flex justify-content-center flex-wrap">
@@ -30,16 +62,9 @@ function Home() {
           ))}
         </div>
       </div>
-      <div>
-        <Link
-          to="/category/all"
-          style={{
-            textAlign: "rigth",
-            display: "block",
-            textDecoration: "none",
-          }}
-        >
-          See more {">>"}
+      <div className="home-actions">
+        <Link to="/category/all" className="home-action-link">
+          See all products &rarr;
         </Link>
       </div>
       {/* sale banner */}
@@ -54,11 +79,14 @@ function Home() {
         <h3>Categories</h3>
         <Row>
           {categories.map((cat) => (
-            <LinkContainer to={`/category/${cat.name.toLocaleLowerCase()}`}>
+            <LinkContainer
+              key={cat.name}
+              to={`/category/${cat.name.toLocaleLowerCase()}`}
+            >
               <Col md={4}>
                 <div
                   style={{
-                    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${cat.img})`,
+                    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.42)), url(${cat.img})`,
                     gap: "10px",
                   }}
                   className="category-title"

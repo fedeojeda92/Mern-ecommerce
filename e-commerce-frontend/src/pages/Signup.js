@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Signup.css";
-import { useSignupMutation } from "../services/appApi";
+import { useSignupMutation } from "../services/api";
 
 function Signup() {
   const [email, setEmail] = useState("");
@@ -16,51 +16,52 @@ function Signup() {
   }
 
   return (
-    <Container>
+    <Container className="auth-page">
       <Row>
-        <Col md={6} className="signup__from-container">
-          <Form style={{ width: "100%" }} onSubmit={handleSignup}>
-            <h1>Create new account</h1>
+        <Col md={6} className="signup__form-container">
+          <div className="auth-card">
+            <h1>Create your account</h1>
+            <p className="auth-subtext">Start shopping bikes with fast checkout and order tracking.</p>
             {isError && <Alert variant="danger">{error.data}</Alert>}
-            <Form.Group>
-              <Form.Label>Name</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Name"
-                value={name}
-                required
-                onChange={(e) => setName(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group>
-              <Form.Label>Email Addres</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="Enter email"
-                value={email}
-                required
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Enter password"
-                value={password}
-                required
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group>
-              <Button type="submit" disabled={isLoading}>
+            <Form style={{ width: "100%" }} onSubmit={handleSignup}>
+              <Form.Group className="mb-3">
+                <Form.Label>Name</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Name"
+                  value={name}
+                  required
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label>Email Address</Form.Label>
+                <Form.Control
+                  type="email"
+                  placeholder="Enter email"
+                  value={email}
+                  required
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  type="password"
+                  placeholder="Enter password"
+                  value={password}
+                  required
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </Form.Group>
+              <Button type="submit" disabled={isLoading} className="w-100 btn-primary">
                 Create account
               </Button>
-            </Form.Group>
-            <p>
-              Don't have an account?<Link to="/login">Login</Link>
+            </Form>
+            <p className="auth-footer">
+              Already have an account? <Link to="/login">Login</Link>
             </p>
-          </Form>
+          </div>
         </Col>
         <Col md={6} className="signup__image--container"></Col>
       </Row>

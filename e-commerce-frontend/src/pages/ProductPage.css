@@ -1,7 +1,62 @@
 .product__carousel--image {
-  max-width: 100%;
+  width: 100%;
+  height: 520px;
   object-fit: cover;
-  max-height: 500px;
+  border-radius: 24px;
+}
+
+.product-detail-panel {
+  padding: 2rem;
+  background: var(--surface);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+
+.product-detail-panel h1 {
+  font-size: clamp(2rem, 2.4vw, 3rem);
+  margin-bottom: 0.75rem;
+}
+
+.product_price {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin: 1rem 0;
+  color: var(--primary);
+}
+
+.product-description {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.purchase-actions {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.product-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.product-actions .form-select,
+.product-actions .btn {
+  min-width: 160px;
+}
+
+.similar-section {
+  margin-top: 3rem;
+}
+
+.similar-section h2 {
+  margin-bottom: 1rem;
+}
+
+.alice-carousel__stage-item {
+  padding: 0 0.5rem;
 }
 
 .alice-carousel_prev-btn,
